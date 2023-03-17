@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Категории</h1>
+                        <h1 class="m-0">{{ $category->title }}</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -22,31 +22,20 @@
         <!-- /.content-header -->
         <!-- Main content -->
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-1 mb-2">
-                    <a class="btn btn-primary" href="{{ route('admin.category.create') }}">Добавить</a>
-                </div>
-            </div>
             <div class="row"></div>
                 <div class="col-4">
                     <div class="card">
                         <div class="card-body table-responsive p-0">
                             <table class="table table-hover text-nowrap">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Категория</th>
-                                    <th>Действия</th>
-                                </tr>
-                                </thead>
                                 <tbody>
-                                @foreach($categories as $category)
                                 <tr>
+                                    <td>ID</td>
                                     <td>{{ $category->id }}</td>
-                                    <td>{{ $category->title }}</td>
-                                    <td><a href="{{ route('admin.category.show', $category) }}"><i class="far fa-eye"></i></a></td>
                                 </tr>
-                                @endforeach
+                                <tr>
+                                    <td>Название</td>
+                                    <td>{{ $category->title }}</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
