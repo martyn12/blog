@@ -23,11 +23,33 @@
         <!-- Main content -->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12">
-                    Категории
+                <div class="col-1 mb-2">
+                    <a class="btn btn-primary" href="{{ route('admin.category.create') }}">Добавить</a>
                 </div>
-                <div class="row col-5">
-                    <a class="btn btn-primary" href="{{ route('admin.category.create') }}">Добавить категорию</a>
+            </div>
+            <div class="row"></div>
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Категория</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($categories as $category)
+                                <tr>
+                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $category->title }}</td>
+                                </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
                 </div>
 
             </div>

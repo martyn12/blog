@@ -23,9 +23,13 @@
         <!-- Main content -->
         <div class="row">
             <div class="col-12">
-                <form action="#" class="col-4">
+                <form action="{{ route('admin.category.store') }}" method="POST" class="col-4">
+                    @csrf
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Название новой категории">
+                        <input type="text" class="form-control" name="title" placeholder="Название новой категории">
+                        @error('title')
+                        <div class="text-danger">Поле обязательно к заполнению</div>
+                        @enderror
                     </div>
                     <input type="submit" class="btn btn-default" value="Добавить">
                 </form>
