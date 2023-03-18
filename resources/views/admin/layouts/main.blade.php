@@ -12,6 +12,8 @@
     <link rel="stylesheet" href={{ asset("plugins/fontawesome-free/css/all.min.css") }}>
     <!-- Theme style -->
     <link rel="stylesheet" href={{ asset("dist/css/adminlte.min.css") }}>
+
+    <link rel="stylesheet" href={{ asset("plugins/summernote/summernote-bs4.min.css") }}>
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href={{ asset("plugins/overlayScrollbars/css/OverlayScrollbars.min.css") }}>
     <!-- Daterange picker -->
@@ -66,6 +68,20 @@
 <!-- Bootstrap 4 -->
 <script src={{ asset("plugins/bootstrap/js/bootstrap.bundle.min.js") }}></script>
 
+<script src={{ asset("plugins/summernote/summernote-bs4.min.js") }}></script>
+<script>
+    $('#summernote').summernote({
+        toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ]
+    });
+</script>
 
 <!-- daterangepicker -->
 <script src={{ asset("plugins/moment/moment.min.js") }}></script>
