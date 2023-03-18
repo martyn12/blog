@@ -9,7 +9,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('admin.post.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-list"></i>
+                        <i class="nav-icon fas fa-clipboard"></i>
                         <p>
                             Посты
                         </p>
