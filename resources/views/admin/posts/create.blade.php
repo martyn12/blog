@@ -29,7 +29,7 @@
                         <input type="text" class="form-control w-50" name="title" placeholder="Заголовок поста"
                                value="{{ old('title') }}">
                         @error('title')
-                        <div class="text-danger">Поле обязательно к заполнению</div>
+                        <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
@@ -37,7 +37,7 @@
                             {{ old('content') }}
                         </textarea>
                         @error('content')
-                        <div class="text-danger">Поле обязательно к заполнению</div>
+                        <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="input-group mb-3 w-50">
@@ -46,7 +46,7 @@
                             <label class="custom-file-label">Выбрать картинку для превью</label>
                         </div>
                         @error('preview_image')
-                        <div class="text-danger">Поле обязательно к заполнению</div>
+                        <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="input-group mb-3 w-50">
@@ -55,7 +55,7 @@
                             <label class="custom-file-label">Выбрать картинку в пост</label>
                         </div>
                         @error('main_image')
-                        <div class="text-danger">Поле обязательно к заполнению</div>
+                        <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group w-25">

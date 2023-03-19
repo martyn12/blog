@@ -31,4 +31,19 @@ class StoreRequest extends FormRequest
             'tag_ids.*' => 'nullable|integer|exists:tags,id',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Обязательное поле',
+            'title.string' => 'Введите строковый тип данных',
+            'content.required' => 'Обязательное поле',
+            'content.string' => 'Введите строковый тип данных',
+            'preview_image.required' => 'Обязательное поле',
+            'preview_image.image' => 'Поддерживаемый тип данных: изображение',
+            'main_image.required' => 'Обязательное поле',
+            'main_image.image' => 'Поддерживаемый тип данных: изображение',
+            'category_id.required' => 'Обязательное поле',
+        ];
+    }
 }
