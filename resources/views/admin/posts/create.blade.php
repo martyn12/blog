@@ -71,6 +71,14 @@
                         <div class="text-danger">Выберите категорию</div>
                         @enderror
                     </div>
+                    <div class="form-group w-50">
+                        <label>Тэги</label>
+                        <select name="tag_ids[]" class="select2" multiple="multiple" data-placeholder="Выберите тэги" style="width: 100%">
+                            @foreach($tags as $tag)
+                            <option {{ is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? ' selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <input type="submit" class="btn btn-default" value="Создать">
                 </form>
             </div>
