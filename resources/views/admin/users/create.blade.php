@@ -26,13 +26,13 @@
                 <form action="{{ route('admin.user.store') }}" method="POST" class="col-4">
                     @csrf
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" placeholder="Имя пользователя">
+                        <input type="text" class="form-control" name="name" placeholder="Имя пользователя" value="{{ old('name') }}">
                         @error('name')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" name="email" placeholder="Email">
+                        <input type="email" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
                         @error('email')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -40,6 +40,19 @@
                     <div class="form-group">
                         <input type="text" class="form-control" name="password" placeholder="Пароль">
                         @error('password')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group w-50">
+                        <label>Роль пользователя</label>
+                        <select class="form-control" name="role">
+                            @foreach($roles as $id => $role)
+                                <option value="{{ $id }}"
+                                    {{ $id == old('role') ? ' selected' : '' }}
+                                >{{ $role }}</option>
+                            @endforeach
+                        </select>
+                        @error('role')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>

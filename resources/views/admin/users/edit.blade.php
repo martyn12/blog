@@ -23,7 +23,7 @@
         <!-- Main content -->
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('admin.user.update', $user->id) }}" method="POST" class="col-4">
+                <form method="POST" action="{{ route('admin.user.update', $user->id) }}" class="col-4">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
@@ -33,8 +33,21 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input type="email" value="{{ $user->email }}" class="form-control" name="email" placeholder="Email">
+                        <input type="email" class="form-control" name="email" placeholder="Email" value="{{ $user->email }}">
                         @error('email')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group w-50">
+                        <label>Роль пользователя</label>
+                        <select class="form-control" name="role">
+                            @foreach($roles as $id => $role)
+                                <option value="{{ $id }}"
+                                    {{ $id == $user->role ? ' selected' : '' }}
+                                >{{ $role }}</option>
+                            @endforeach
+                        </select>
+                        @error('role')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
@@ -43,5 +56,4 @@
             </div>
         </div>
     </div>
-
 @endsection
