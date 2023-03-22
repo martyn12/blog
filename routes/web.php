@@ -24,6 +24,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Profile', 'prefix' => 'profil
     });
     Route::group(['namespace' => 'Liked', 'prefix' => 'liked'], function () {
         Route::get('/', 'IndexController')->name('profile.liked.index');
+        Route::delete('/{post}', 'DeleteController')->name('profile.liked.delete');
     });
     Route::group(['namespace' => 'Comment', 'prefix' => 'comments'], function () {
         Route::get('/', 'IndexController')->name('profile.comment.index');
