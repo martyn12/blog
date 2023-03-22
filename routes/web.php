@@ -22,6 +22,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Profile', 'prefix' => 'profil
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('profile.main.index');
     });
+    Route::group(['namespace' => 'Liked', 'prefix' => 'liked'], function () {
+        Route::get('/', 'IndexController')->name('profile.liked.index');
+    });
+    Route::group(['namespace' => 'Comment', 'prefix' => 'comments'], function () {
+        Route::get('/', 'IndexController')->name('profile.comment.index');
+    });
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['verified','auth', 'admin']], function () {

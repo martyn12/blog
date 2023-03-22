@@ -60,7 +60,7 @@
     </nav>
     <!-- /.navbar -->
 
-    @include('admin/components/sidebar')
+    @include('profile.components.sidebar')
 
     @yield('content')
 

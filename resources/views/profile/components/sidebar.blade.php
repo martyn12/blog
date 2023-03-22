@@ -8,35 +8,27 @@
                      with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                    <a href="{{ route('admin.user.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
+                    <a href="{{ route('home') }}" class="nav-link">
+                        <i class="nav-icon fas fa-home"></i>
                         <p>
-                            Пользователи
+                            На главную
                         </p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('admin.post.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-clipboard"></i>
+                    <a href="{{ route('profile.liked.index') }}" class="nav-link">
+                        <i class="nav-icon far fa-heart"></i>
                         <p>
-                            Посты
+                            Понравившиеся посты
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.category.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-list"></i>
+                    <a href="{{ route('profile.comment.index') }}" class="nav-link">
+                        <i class="nav-icon far fa-comment"></i>
                         <p>
-                            Категории
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.tag.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-tags"></i>
-                        <p>
-                            Тэги
+                            Комментарии
                         </p>
                     </a>
                 </li>
