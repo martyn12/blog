@@ -39,21 +39,23 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
-            <ul class="navbar-nav mr-1">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ auth()->user()->name }}
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle text-dark" href="#" role="button" id="dropdownMenuLink"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ auth()->user()->name }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    @if(!auth()->user()->role)
+                    <a class="dropdown-item" href="{{ route('admin.index') }}">&nbsp&nbspАдмин панель</a>
+                    @endif
+                    <a class="dropdown-item d-flex justify-content-md-start">
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                                <input class="border-0 bg-transparent" type="submit" value="Выйти">
+                        </form>
                     </a>
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <input type="submit" class="dropdown-item" value="Выйти">
-                        </div>
-                    </form>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
 
 

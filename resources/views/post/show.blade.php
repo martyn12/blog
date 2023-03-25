@@ -19,8 +19,8 @@
             </section>
             <section>
                 <div class="row col-lg-9 mx-auto mt-4">
-                    {{ $post->likes()->count() }}
                     @auth()
+                        {{ $post->likes()->count() }}
                         <form action="{{ route('post.like.store', $post->id) }}" method="POST">
                             @csrf
                             @if(auth()->user()->likedPosts->contains($post->id))
