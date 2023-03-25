@@ -15,17 +15,26 @@
 <body>
 <div class="edica-loader"></div>
 <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="collapse navbar-collapse" id="edicaMainNav">
+    <div class="navbar-collapse">
         <ul class="navbar-nav">
-            @guest()
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="{{ route('profile.main.index') }}">Войти</a>
+            <div>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">На главную</a>
                 </li>
+            </div>
+            @guest()
+                <div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('profile.main.index') }}">Войти</a>
+                    </li>
+                </div>
             @endguest
             @auth()
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="{{ route('profile.main.index') }}">Личный кабинет</a>
-                </li>
+                <div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('profile.main.index') }}">Личный кабинет</a>
+                    </li>
+                </div>
             @endauth
         </ul>
     </div>

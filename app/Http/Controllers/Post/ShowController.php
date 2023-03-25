@@ -15,7 +15,7 @@ class ShowController extends Controller
         $relatedPosts = Post::where('category_id', '=', $post->category_id)
             ->where('id', '!=', $post->id)
             ->inRandomOrder()
-            ->limit(5)
+            ->limit(3)
             ->get();
         $date = Carbon::parse($post->created_at);
         $comments = Comment::where('post_id', '=', $post->id)->get();
