@@ -14,6 +14,22 @@
 </head>
 <body>
 <div class="edica-loader"></div>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="edicaMainNav">
+        <ul class="navbar-nav">
+            @guest()
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="{{ route('profile.main.index') }}">Войти</a>
+                </li>
+            @endguest
+            @auth()
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="{{ route('profile.main.index') }}">Личный кабинет</a>
+                </li>
+            @endauth
+        </ul>
+    </div>
+</nav>
 
 
 @yield('content')
@@ -23,10 +39,15 @@
         <div class="footer-banner" data-aos="fade-up">
             <h1 class="banner-title">Download it now.</h1>
             <div class="banner-btns-wrapper">
-                <button class="btn btn-success"> <img src="{{ asset('assets/images/apple@1x.svg') }}" alt="ios" class="mr-2"> App Store</button>
-                <button class="btn btn-success"> <img src="{{ asset('assets/images/android@1x.svg') }}" alt="android" class="mr-2"> Google Play</button>
+                <button class="btn btn-success"><img src="{{ asset('assets/images/apple@1x.svg') }}" alt="ios"
+                                                     class="mr-2"> App Store
+                </button>
+                <button class="btn btn-success"><img src="{{ asset('assets/images/android@1x.svg') }}" alt="android"
+                                                     class="mr-2"> Google Play
+                </button>
             </div>
-            <p class="banner-text">Add some helper text here to explain the finer details of your <br> product or service.</p>
+            <p class="banner-text">Add some helper text here to explain the finer details of your <br> product or
+                service.</p>
         </div>
     </div>
 </section>
@@ -68,8 +89,10 @@
             </div>
             <div class="col-md-3">
                 <div class="dropdown footer-country-dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="footerCountryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="flag-icon flag-icon-gb flag-icon-squared"></span> United Kingdom <i class="fas fa-chevron-down ml-2"></i>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="footerCountryDropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="flag-icon flag-icon-gb flag-icon-squared"></span> United Kingdom <i
+                            class="fas fa-chevron-down ml-2"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="footerCountryDropdown">
                         <button class="dropdown-item" href="#">
@@ -88,7 +111,9 @@
                 <a href="#!">Terms</a>
                 <a href="#!">Site Map</a>
             </nav>
-            <p class="mb-0">© Edica. 2020 <a href="https://www.bootstrapdash.com" target="_blank" rel="noopener noreferrer" class="text-reset">bootstrapdash</a> . All rights reserved.</p>
+            <p class="mb-0">© Edica. 2020 <a href="https://www.bootstrapdash.com" target="_blank"
+                                             rel="noopener noreferrer" class="text-reset">bootstrapdash</a> . All rights
+                reserved.</p>
         </div>
     </div>
 </footer>

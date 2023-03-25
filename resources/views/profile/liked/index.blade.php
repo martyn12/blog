@@ -41,7 +41,7 @@
                                         <tr>
                                             <td>{{ $post->id }}</td>
                                             <td>{{ $post->title }}</td>
-                                            <td><a href="{{ route('profile.liked.index', $post->id) }}"><i class="far fa-eye"></i></a></td>
+                                            <td><a href="{{ route('post.show', $post->id) }}"><i class="far fa-eye"></i></a></td>
                                             <td>
                                                 <form action="{{ route('profile.liked.delete', $post->id) }}" method="POST">
                                                     @csrf

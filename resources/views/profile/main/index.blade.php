@@ -29,14 +29,13 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>12112</h3>
-
-                                <p>Liked posts</p>
+                                <h3>{{ $user->likedPosts->count() }}</h3>
+                                <p>Понравившиеся посты</p>
                             </div>
                             <div class="icon">
                                 <i class="far fa-heart"></i>
                             </div>
-                            <a href="#" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('profile.liked.index') }}" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -44,14 +43,13 @@
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>122</h3>
-
-                                <p>Comments</p>
+                                <h3>{{ $user->comments->count() }}</h3>
+                                <p>Комментарии</p>
                             </div>
                             <div class="icon">
                                 <i class="far fa-comment"></i>
                             </div>
-                            <a href="#" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('profile.comment.index') }}" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
