@@ -16,16 +16,20 @@
 <div class="edica-loader"></div>
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="navbar-collapse">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
             <div>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">На главную</a>
+                    <h6>
+                        <a class="nav-link" href="{{ route('home') }}">На главную</a>
+                    </h6>
                 </li>
             </div>
             @guest()
                 <div>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('profile.main.index') }}">Войти</a>
+                        <h6>
+                            <a class="nav-link" href="{{ route('profile.main.index') }}">Войти</a>
+                        </h6>
                     </li>
                 </div>
             @endguest
