@@ -18,6 +18,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/', 'IndexController')->name('home');
 });
 
+Route::get('/404', function () {
+    return view('404');
+})->name('404');
+
 Route::group(['namespace' => 'App\Http\Controllers\Post', 'prefix' => 'posts'], function () {
     Route::get('/', 'IndexController')->name('post.index');
     Route::get('/{post}', 'ShowController')->name('post.show');
@@ -31,7 +35,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Post', 'prefix' => 'posts'], 
     });
 });
 
-Route::group(['namespace' => 'App\Http\Controllers\Profile', 'prefix' => 'profile', 'middleware' => ['auth', 'verified']], function () {
+Route::group(['namespace' => 'App\Http\Controllers\Profile', 'prefix' => 'profile', 'middleware' => ['auth']], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('profile.main.index');
     });
@@ -47,7 +51,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Profile', 'prefix' => 'profil
     });
 });
 
-Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['verified','auth', 'admin']], function () {
+Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('admin.index');
     });
@@ -93,5 +97,5 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
     });
 });
 
-Auth::routes(['verify' => true]);
+Auth::routes();
 
