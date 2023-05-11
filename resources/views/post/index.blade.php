@@ -46,7 +46,9 @@
                     @endforeach
                 </div>
                 <div class="pagination justify-content-center" style="margin-top: -100px">
+                    @if($posts)
                     {{ $posts->links() }}
+                    @endif
                 </div>
             </section>
             <div class="row mt-4">
