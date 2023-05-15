@@ -29,7 +29,7 @@ npm install && npm run build
 ```
 docker-compose up -d
 ```
-    - При запуске на тестовой/прод среде
+либо:
 ```
 docker-compose -f docker-compose.prod.yml up -d
 ```
